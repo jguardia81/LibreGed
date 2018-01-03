@@ -1,0 +1,53 @@
+#ifndef CONTEXTLIB_H
+#define CONTEXTLIB_H
+
+
+#include <string>
+#include <Poco/Util/IniFileConfiguration.h>
+
+class  ContextLib
+{
+
+private:
+    /**
+     * @brief ContextLib private contructor
+     * Singleton pattern,. Wze need a unique instance of this
+     */
+    ContextLib();
+    /**
+     * @brief _contextLibPtr unique instance of this class
+     */
+    static ContextLib*  _contextLibPtr;
+public:
+    /**
+     * @brief getInstance: create and return the unique instance of this class
+     * @return the unique instance
+     */
+    static const ContextLib* getInstance();
+    
+    /**
+     * @brief getFileServerName getter for filename server
+     * @return  the file server namle as a string
+     */
+    std::string getFileServerName();
+    
+    /**
+     * @brief getServerName getter for the server name
+     * @return the server name as string
+     */
+    std::string getServerName();
+    
+    /**
+     * @brief getFileServerPort getter for the fileserver port
+     * @return the file server port as an int 
+     */
+    std::string getFileServerPort();
+    
+    /**
+     * @brief getServerPort getter for thz server port
+     * @return the server port as an inst
+     */
+    std::string getServerPort();
+};
+
+#endif // CONTEXTLIB_H
